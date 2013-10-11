@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Setup user CI-user with a password (cisco123)
+if ! getent passwd CI-user ; then
+    useradd -m CI-user -p gFQzaw11ilbig -s /bin/bash
+fi
+if ! [ -e /etc/sudoers.d/CI-user ] ; then
+    echo "CI-user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/CI-user
+    chmod 0440 /etc/sudoers.d/CI-user
+    visudo -c
+fi
+

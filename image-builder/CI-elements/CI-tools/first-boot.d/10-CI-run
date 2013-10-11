@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#just for testing
+/opt/stack/CI-tools/CI-test > /opt/stack/CI-tools/new-file.txt
+cd /root/openstack-installer/install-scripts
+chmod 775 master.sh
+chmod 775 setup.sh
+
+/root/openstack-installer/install-scripts/setup.sh
+
+/root/openstack-installer/install-scripts/master.sh
+
